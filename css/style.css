@@ -1147,6 +1147,8 @@ ul.link_menu li a:hover {
   
   .chat-character {
      text-align: center;
+     margin-left: auto; /* Empuja la burbuja hacia la derecha */
+     margin-right: auto; /* Empuja la burbuja hacia la izquierda */
   }
   
   .character-portrait {
@@ -1168,8 +1170,11 @@ ul.link_menu li a:hover {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave para dar profundidad */
     font-family: 'Arial', sans-serif; /* Asegúrate de usar una tipografía moderna y legible */
     font-size: 0.9em; /* Ajuste del tamaño de la fuente según necesidades */
+    margin-left: auto; /* Empuja la burbuja hacia la derecha */
+    margin-right: auto; /* Empuja la burbuja hacia la izquierda */
 }
-  
+
+
 .chat-bubble::after {
     content: '';
     position: absolute;
