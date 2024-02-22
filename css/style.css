@@ -1141,7 +1141,7 @@ ul.link_menu li a:hover {
      background-position: center;
      background-repeat: no-repeat;
      min-height: 804px;
-     padding-top: 17%;
+     padding-top: 10%;
  }
  
   
@@ -1156,28 +1156,33 @@ ul.link_menu li a:hover {
      margin-bottom: 10px;
   }
   
-  .chat-bubble {
-     display: inline-block;
-     background-color: #ffffff;
-     border: 1px solid #ddd;
-     border-radius: 15px;
-     padding: 10px 20px;
-     position: relative;
-     margin-bottom: 10px;
-  }
+.chat-bubble {
+    display: inline-block;
+    background: linear-gradient(to bottom right, #0673a5, #23d7f3); /* Degradado de azul claro a azul más intenso */
+    color: #ffffff; /* Texto blanco para mayor legibilidad */
+    border: 1px solid #bbb; /* Borde sutil */
+    border-radius: 20px; /* Bordes más redondeados para un look moderno */
+    padding: 15px 25px; /* Ajuste del relleno para dar más espacio al texto */
+    position: relative;
+    margin-bottom: 20px; /* Aumento del margen inferior */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave para dar profundidad */
+    font-family: 'Arial', sans-serif; /* Asegúrate de usar una tipografía moderna y legible */
+    font-size: 0.9em; /* Ajuste del tamaño de la fuente según necesidades */
+}
   
-  .chat-bubble::after {
-     content: '';
-     position: absolute;
-     width: 0;
-     height: 0;
-     border-left: 10px solid transparent;
-     border-right: 10px solid transparent;
-     border-top: 10px solid #ffffff;
-     left: 50%;
-     bottom: -10px;
-     transform: translateX(-50%);
-  }
+.chat-bubble::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 12px solid transparent; /* Ajusta el tamaño de la 'flecha' */
+    border-right: 12px solid transparent;
+    border-top: 12px solid #ffffff; /* Color de fondo del elemento degradado */
+    left: 50%;
+    bottom: -12px; /* Ajusta la posición de la 'flecha' para coincidir con el nuevo border-radius */
+    transform: translateX(-50%);
+    transition: all 0.3s ease; /* Transición suave para cualquier cambio */
+}
   
   /* Responsive grid adjustments might be needed depending on your existing styles */
   @media (max-width: 767px) {
