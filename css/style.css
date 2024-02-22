@@ -1136,8 +1136,10 @@ ul.link_menu li a:hover {
 /** chat socratico **/
 .chat {
      background-color: #f9f9f9;
-     padding: 20px 0;
-  }
+     padding-top: 100px; /* Aumenta el espacio en la parte superior */
+     padding-bottom: 100px; /* Aumenta el espacio en la parte inferior */
+ }
+ 
   
   .chat-character {
      text-align: center;
