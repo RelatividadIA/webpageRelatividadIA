@@ -1120,7 +1120,7 @@ ul.link_menu li a:hover {
 }
 
 .copyright a:hover {
-     color: #33f033;
+     color: #4AFFFF;
 }
 
 
@@ -1130,5 +1130,5 @@ ul.link_menu li a:hover {
 /** endinner page css **/
 
 .in_page .header {
-     border-bottom: #3fe43d solid 2px;
+     border-bottom: #4AFFFF solid 2px;
 }
