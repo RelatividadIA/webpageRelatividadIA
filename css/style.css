@@ -1132,3 +1132,58 @@ ul.link_menu li a:hover {
 .in_page .header {
      border-bottom: #4AFFFF solid 2px;
 }
+
+/** chat socratico **/
+ #chat-container {
+     display: flex;
+     justify-content: center;
+     align-items: flex-end;
+     gap: 20px;
+ }
+ 
+ .chat-character {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     padding: 20px;
+ }
+ 
+ .character-portrait {
+     width: 100px;
+     height: 100px;
+     border-radius: 50%;
+     margin: 0 10px;
+     border: 3px solid #333;
+     object-fit: cover;
+ }
+ 
+ .chat-bubble {
+     background-color: white;
+     border: 2px solid #333;
+     border-radius: 20px;
+     padding: 15px;
+     margin-bottom: 10px;
+     position: relative;
+     max-width: 200px;
+ }
+ 
+ .chat-bubble::after {
+     content: '';
+     position: absolute;
+     border: 10px solid transparent;
+     border-top-color: white;
+ }
+ 
+ #einstein-bubble::after {
+     left: 50%;
+     transform: translateX(-50%);
+     bottom: -20px;
+ }
+ 
+ #cleopatra-bubble::after {
+     right: 50%;
+     transform: translateX(50%);
+     bottom: -20px;
+ }
+ 
+ /** end chat socratico **/
