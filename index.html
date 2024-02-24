@@ -9,33 +9,40 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 <body>
-    
-    <div class="chat-container">
+
+    <div id="CHAT1" class="chat-container">
         <div class="chat-header">
             <div class="header-content">
                 <div class="profile-picture">
                     <img src="daniel.jpeg" alt="Profile Picture">
                 </div>
                 <h2>Daniel Morales</h2>
-                
-                <button type="button" class="btn-clear" onclick="resetConversation()">Limpiar</button>
+                <!-- Botón de limpiar movido aquí -->
+                <button type="button" id="btn-clear1" class="btn-clear" onclick="chat1.resetConversation()">Limpiar</button>
             </div>
         </div>
-
-        <div id="apiResponse" class="chat-messages"></div>
-        <form id="promptForm" class="chat-form" novalidate="novalidate">
-            <textarea class="form-control" id="prompt" placeholder="Escríbeme tu mensaje" required rows="1"></textarea>
-            <button type="submit" class="btn-send " onclick="sendMessage('prompt')">
+        <div id="apiResponse1" class="chat-messages"></div>
+        <form id="promptForm1" class="chat-form">
+            <textarea class="form-control" id="prompt1" placeholder="Escríbeme tu mensaje" required rows="1"></textarea>
+            <button type="submit" class="btn-send">
                 <span class="visually-hidden">Enviar</span>
-                <i class="fas fa-paper-plane"></i> 
+                <i class="fas fa-paper-plane"></i> <!-- Icono de FontAwesome, asegúrate de incluir la librería -->
+            </button>
         </form>
     </div>
 
-    
-    
+    <script src="chat.js"></script>
+    <script type="text/javascript">
+        N1_chatID = document.getElementById("prompt1");
+        N1_apiResponse = document.getElementById("apiResponse1");
+        N1_btnClear = document.getElementById("btn-clear1");
+        N1_promptForm = document.getElementById("promptForm1");
+        N1_trainingPromptDirectory = "a";
+        N1_URL = "b";
 
-
-    <script src="simulated_script.js"></script>
+        CHAT1 = new Chat(N1_chatID, N1_apiResponse, N1_btnClear, N1_promptForm, N1_trainingPromptDirectory, N1_URL);
+        //chatID, apiResponse, btnClear, promptForm, traningPromptDirectory, URL
+    </script>
 </body>
 </html>
 
