@@ -1317,20 +1317,29 @@ ul.link_menu li a:hover {
  }
  
  .btn-clear, .btn-send {
-     background-color: rgb(0 79 130);
+     background-image: linear-gradient(to right, #007bff, #004f83, #002752); /* Degradado azul */
      color: #fff;
      border: none;
-     padding: 10px 20px;
+     padding: 10px; /* Ajusta el padding para hacer el botón más circular si es necesario */
      font-size: 16px;
      font-weight: bold;
-     border-radius: 25px;
-     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+     border-radius: 50%; /* Hace el botón completamente redondo */
+     box-shadow: 0 0 15px 5px rgba(0, 123, 255, 0.6); /* Sombra azulada difuminada para el efecto de brillo */
      transition: background-color 0.3s ease;
+     width: 50px; /* Establece un ancho fijo */
+     height: 50px; /* Establece una altura fija para asegurar la forma circular */
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     cursor: pointer; /* Estilo del cursor al pasar sobre el botón */
  }
  
  .btn-clear:hover, .btn-send:hover {
-     background-color: rgba(255, 255, 255, 0.7); /* Mayor opacidad al pasar el mouse */
+     background-image: linear-gradient(to left, #0062cc, #003d7a, #001b2d); /* Cambia el degradado al pasar el mouse */
+     box-shadow: 0 0 20px 10px rgba(0, 123, 255, 0.7); /* Aumenta el brillo al pasar el mouse */
  }
+ 
+ 
  
  /* Ajustes específicos para el botón enviar, si es necesario */
  .btn-send {
