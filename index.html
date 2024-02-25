@@ -18,13 +18,55 @@
                 </div>
                 <h2>Daniel Morales</h2>
                 <!-- Botón de limpiar movido aquí -->
-                <button type="button" id="btn-clear1" class="btn-clear" onclick="chat1.resetConversation()">Limpiar</button>
+                <button type="button" id="btn-clear1" class="btn-clear" onclick="CHAT1.resetConversation()">Limpiar</button>
             </div>
         </div>
         <div id="apiResponse1" class="chat-messages"></div>
-        <form id="promptForm1" class="chat-form">
+        <form id="promptForm1" class="chat-form" novalidate="novalidate">
             <textarea class="form-control" id="prompt1" placeholder="Escríbeme tu mensaje" required rows="1"></textarea>
             <button type="submit" class="btn-send">
+                <span class="visually-hidden">Enviar</span>
+                <i class="fas fa-paper-plane"></i> <!-- Icono de FontAwesome, asegúrate de incluir la librería -->
+            </button>
+        </form>
+    </div>
+
+    <div id="CHAT2" class="chat-container">
+        <div class="chat-header">
+            <div class="header-content">
+                <div class="profile-picture">
+                    <img src="daniel.jpeg" alt="Profile Picture">
+                </div>
+                <h2>Daniel Morales</h2>
+                <!-- Botón de limpiar movido aquí -->
+                <button type="button" id="btn-clear2" class="btn-clear" onclick="CHAT2.resetConversation()">Limpiar</button>
+            </div>
+        </div>
+        <div id="apiResponse2" class="chat-messages"></div>
+        <form id="promptForm2" class="chat-form" novalidate="novalidate">
+            <textarea class="form-control" id="prompt2" placeholder="Escríbeme tu mensaje" required rows="1"></textarea>
+            <button type="submit" class="btn-send" >
+                <span class="visually-hidden">Enviar</span>
+                <i class="fas fa-paper-plane"></i> <!-- Icono de FontAwesome, asegúrate de incluir la librería -->
+            </button>
+        </form>
+    </div>
+
+    <div id="CHAT3" class="chat-container">
+        <div class="chat-header">
+            <div class="header-content">
+                <div class="profile-picture">
+                    <img src="daniel.jpeg" alt="Profile Picture">
+                </div>
+                <h2>Daniel Morales</h2>
+                <!-- Botón de limpiar movido aquí -->
+                <button type="button" id="btn-clear3" class="btn-clear" onclick="CHAT3.resetConversation()">Limpiar</button>
+            </div>
+        </div>
+        <div id="apiResponse3" class="chat-messages"></div>
+        <form id="promptForm3" class="chat-form" novalidate="novalidate">
+            <textarea class="form-control" id="prompt3" placeholder="Escríbeme tu mensaje" required rows="1"></textarea>
+            <button type="submit" class="btn-send" >
                 <span class="visually-hidden">Enviar</span>
                 <i class="fas fa-paper-plane"></i> <!-- Icono de FontAwesome, asegúrate de incluir la librería -->
             </button>
@@ -37,11 +79,29 @@
         N1_apiResponse = document.getElementById("apiResponse1");
         N1_btnClear = document.getElementById("btn-clear1");
         N1_promptForm = document.getElementById("promptForm1");
-        N1_trainingPromptDirectory = "a";
-        N1_URL = "b";
+        N1_trainingPromptDirectory = "Ejemplo.txt";
+        N1_URL = "https://chatgpt-conversacion.o8791rg889c4o.us-east-1.cs.amazonlightsail.com/chatgpt";
+
+        N2_chatID = document.getElementById("prompt2");
+        N2_apiResponse = document.getElementById("apiResponse2");
+        N2_btnClear = document.getElementById("btn-clear2");
+        N2_promptForm = document.getElementById("promptForm2");
+        N2_trainingPromptDirectory = "Ejemplo.txt";
+        N2_URL = "https://chatgpt-conversacion.o8791rg889c4o.us-east-1.cs.amazonlightsail.com/chatgpt";
+
+        N3_chatID = document.getElementById("prompt3");
+        N3_apiResponse = document.getElementById("apiResponse3");
+        N3_btnClear = document.getElementById("btn-clear3");
+        N3_promptForm = document.getElementById("promptForm3");
+        N3_trainingPromptDirectory = "Ejemplo.txt";
+        N3_URL = "https://chatgpt-conversacion.o8791rg889c4o.us-east-1.cs.amazonlightsail.com/chatgpt";
 
         CHAT1 = new Chat(N1_chatID, N1_apiResponse, N1_btnClear, N1_promptForm, N1_trainingPromptDirectory, N1_URL);
+        CHAT2 = new Chat(N2_chatID, N2_apiResponse, N2_btnClear, N2_promptForm, N2_trainingPromptDirectory, N2_URL);
+        CHAT3 = new Chat(N3_chatID, N3_apiResponse, N3_btnClear, N3_promptForm, N3_trainingPromptDirectory, N3_URL);
         //chatID, apiResponse, btnClear, promptForm, traningPromptDirectory, URL
+
+        
     </script>
 </body>
 </html>
