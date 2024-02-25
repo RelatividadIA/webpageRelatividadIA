@@ -1131,23 +1131,42 @@ ul.link_menu li a:hover {
 /** chat socratico **/
 .chat {
      position: relative;
-     background: url(../images/banner2.jpg) center center / cover no-repeat fixed;
-     height: 100vh; /* Mantiene la altura total de la pantalla */
+     /**background: url(../images/banner2.jpg) center center / cover no-repeat fixed;*/
+     background: #050505;
+     height: 100vh;
      display: flex;
-     align-items: flex-start; /* Cambiado de center a flex-start para mover el contenido hacia arriba */
-     justify-content: center;
+     align-items: flex-start; /* Alinea los elementos al inicio del contenedor en el eje cruzado */
+     justify-content: center; /* Centra los elementos en el eje principal */
      font-family: Arial, sans-serif;
-     padding: 0 50px; /* Ajuste para el padding superior e inferior si es necesario */
+     padding: 0 50px;
      border-left-width: 20px;
-     margin-top: 0px; /* Asegúrate de que no haya un margen superior innecesario */
-     width: 100%; /* Para asegurarse de que la imagen de fondo ocupe toda la anchura */
-     max-width: none; /* Elimina cualquier ancho máximo que pueda estar restringiendo el tamaño */
-     padding-top: 50px
-}
+     margin-top: 0px;
+     width: 100%;
+     max-width: none;
+     padding-top: 50px; /* Espacio inicial para pantallas grandes */
+     flex-direction: row; /* El diseño predeterminado es en fila */
+     gap: 20px; /* Espacio entre los elementos para pantallas grandes */
+ }
+ 
+ /* Media query para pantallas de 600px o menos */
+ @media (max-width: 600px) {
+     .chat {
+         flex-direction: column; /* Cambia a columnas en pantallas pequeñas */
+         align-items: center; /* Centra los elementos en el eje cruzado */
+         justify-content: center; /* Centra los elementos en el eje principal */
+         padding: 20px 20px; /* Ajusta el padding para pantallas pequeñas */
+         padding-top: 70px; /* Aumenta el espacio en el inicio para pantallas pequeñas */
+         height: auto; /* Ajusta la altura para acomodar el diseño en columna */
+         gap: 30px; /* Aumenta el espacio entre elementos en columnas para pantallas pequeñas */
+     }
+ }
+ 
+ 
+ 
+ 
 
  
- 
-  
+
 .chat-bubble::after {
     content: '';
     position: absolute;
@@ -1172,22 +1191,7 @@ ul.link_menu li a:hover {
   
  /** end chat socratico **/
 
- .chat-container {
 
-     max-width: 600px;
-     margin: 20px;
-     border: 3px solid transparent; /* Establecer un borde transparente para mantener la estructura del contenedor */
-     border-radius: 15px;
-     background-color: #686868;
-     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-     display: flex;
-     flex-direction: column;
-     overflow: hidden;
-     position: relative; /* Necesario para posicionar correctamente el pseudo-elemento */
-     width: calc(33.333% - 20px); /* Ajusta para 3 cajas en una fila con un poco de espacio */
-     /* Resto de estilos para .chat-box */
- 
- }
  
  .chat-container::after {
      content: '';
@@ -1247,17 +1251,19 @@ ul.link_menu li a:hover {
      height: 400px;
      overflow-y: auto;
      padding: 10px;
-     background-color: #080f19;
+     background-color: #080f1900;
  }
  
  .chat-form {
      padding: 10px;
      background-color: #ffffff;
-     border-bottom-left-radius: 15px;
-     border-bottom-right-radius: 15px;
+     border-radius: 20px; /* Aplica un radio de borde uniforme a todas las esquinas */
      display: flex;
      gap: 10px;
  }
+ 
+
+
  
  textarea {
      width: calc(100% - 90px);
@@ -1401,3 +1407,5 @@ ul.link_menu li a:hover {
     color: #fbfbfb;
     margin: 0;
 }
+
+
