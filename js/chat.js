@@ -4,18 +4,19 @@ class Chat {
     #btnClear;
     #promptForm;
     #URL_BASE;
-
+    #claseColorDeLaIA
     #trainingPrompt;
     #conversationHistory;
 
 
-    constructor(chatID, apiResponse, btnClear, promptForm, prompt, URL) {
+    constructor(chatID, apiResponse, btnClear, promptForm, prompt, URL, claseColorDeLaIA) {
         this.#chatID = chatID;
         this.#apiResponse = apiResponse;
         this.#btnClear = btnClear;
         this.#trainingPrompt = prompt;
         this.#promptForm = promptForm
         this.#URL_BASE = URL
+        this.#claseColorDeLaIA = claseColorDeLaIA;
         this.#conversationHistory = [{ role: "system", content: this.#trainingPrompt}];
 
         this.subscribeEvents();
@@ -29,6 +30,9 @@ class Chat {
             let messageElement = document.createElement("div");
             messageElement.classList.add('message-bubble');
             messageElement.classList.add(message.role === "user" ? "user" : "assistant");
+            if (message.role === "assistant") {
+                messageElement.classList.add(this.#claseColorDeLaIA);
+            }
     
             // Aplicar la clase writing si el mensaje es "escribiendo" o alguna variación de este
             if (message.content.startsWith("escribiendo")) {
