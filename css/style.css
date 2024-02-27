@@ -1229,21 +1229,16 @@ ul.link_menu li a:hover {
      }
  }
  
-
- 
  .chat-header {
      display: flex;
      align-items: center;
      padding: 10px 20px;
-     background: #080f19;
+     background: #080f1900;
      flex-wrap: nowrap;
      align-content: flex-end;
      flex-direction: row;
-     
-     /* Agregar un borde inferior con degradado más claro */
-     border-bottom: 3px solid; /* Ajusta el grosor según necesites */
+     border-bottom: 3px solid;
      border-image: linear-gradient(to right, #003366, #0099CC, #003366) 1;
-     
  }
  
  .header-content {
@@ -1285,6 +1280,20 @@ ul.link_menu li a:hover {
      border: none; /* No hay borde */
  }
  
+
+ .form-control {
+     display: block;
+     width: 100%;
+     padding: .375rem .75rem;
+     font-size: 1rem;
+     line-height: 1.5;
+     color: #000000;
+     background-color: #08101b;
+     background-clip: padding-box;
+     border: 0px solid #ced4da;
+     border-radius: .50rem;
+     transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+ }
 
  textarea {
      width: calc(100% - 90px);
@@ -1395,7 +1404,7 @@ ul.link_menu li a:hover {
      width: 50px;
      height: 50px;
      border-radius: 50%;
-     background-color: #557684;
+     background-color: #00599b;
      border: none;
      color: white;
      font-size: 0;
