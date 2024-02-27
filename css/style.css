@@ -1131,23 +1131,37 @@ ul.link_menu li a:hover {
 /** chat socratico **/
 .chat {
      position: relative;
-     background: url(../images/banner2.jpg) center center / cover no-repeat fixed;
-     height: 100vh; /* Mantiene la altura total de la pantalla */
+     /**background: url(../images/banner2.jpg) center center / cover no-repeat fixed;*/
+     background: #050505;
+     height: 100vh;
      display: flex;
-     align-items: flex-start; /* Cambiado de center a flex-start para mover el contenido hacia arriba */
-     justify-content: center;
+     align-items: flex-start; /* Alinea los elementos al inicio del contenedor en el eje cruzado */
+     justify-content: center; /* Centra los elementos en el eje principal */
      font-family: Arial, sans-serif;
-     padding: 0 50px; /* Ajuste para el padding superior e inferior si es necesario */
+     padding: 0 50px;
      border-left-width: 20px;
-     margin-top: 0px; /* Asegúrate de que no haya un margen superior innecesario */
-     width: 100%; /* Para asegurarse de que la imagen de fondo ocupe toda la anchura */
-     max-width: none; /* Elimina cualquier ancho máximo que pueda estar restringiendo el tamaño */
-     padding-top: 50px
-}
+     margin-top: 0px;
+     width: 100%;
+     max-width: none;
+     padding-top: 50px; /* Espacio inicial para pantallas grandes */
+     flex-direction: row; /* El diseño predeterminado es en fila */
+     gap: 20px; /* Espacio entre los elementos para pantallas grandes */
+ }
+ 
+ /* Media query para pantallas de 600px o menos */
+ @media (max-width: 600px) {
+     .chat {
+         flex-direction: column; /* Cambia a columnas en pantallas pequeñas */
+         align-items: center; /* Centra los elementos en el eje cruzado */
+         padding: 20px; /* Ajusta el padding para pantallas pequeñas */
+         padding-top: 70px; /* Aumenta el espacio en el inicio para pantallas pequeñas */
+         height: auto; /* Ajusta la altura para acomodar el diseño en columna */
+         width: calc(100% - 0px); /* Casi toda la pantalla a lo ancho, con un pequeño margen */
+     }
+ }
+ 
+ 
 
- 
- 
-  
 .chat-bubble::after {
     content: '';
     position: absolute;
@@ -1172,41 +1186,50 @@ ul.link_menu li a:hover {
   
  /** end chat socratico **/
 
+ 
  .chat-container {
-
      max-width: 600px;
      margin: 20px;
-     border: 3px solid transparent; /* Establecer un borde transparente para mantener la estructura del contenedor */
+     border: 3px solid transparent;
      border-radius: 15px;
-     background-color: #686868;
+     background-color: #68686800;
      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
      display: flex;
      flex-direction: column;
      overflow: hidden;
-     position: relative; /* Necesario para posicionar correctamente el pseudo-elemento */
-     width: calc(33.333% - 20px); /* Ajusta para 3 cajas en una fila con un poco de espacio */
-     /* Resto de estilos para .chat-box */
- 
+     position: relative;
+     width: calc(33.333% - 20px);
  }
  
- .chat-container::after {
-     content: '';
-     position: absolute;
-     top: -3px; /* Debe ser el negativo del grosor del borde */
-     left: -3px; /* Debe ser el negativo del grosor del borde */
-     width: calc(100% + 6px); /* Ajustar basado en el grosor del borde */
-     height: calc(100% + 6px); /* Ajustar basado en el grosor del borde */
-     border: 3px solid transparent;
-     border-radius: 18px; /* Debe ser el radio del borde del contenedor más el grosor del borde */
-     border-image: linear-gradient(to right, #003366, #0099CC, #003366) 1;
-     border-image-slice: 1; /* Esto asegura que el degradado se aplique correctamente */
-     z-index: -1; /* Colocar detrás del contenido */
-     pointer-events: none; /* Permitir eventos de clic a través de este pseudo-elemento */
+/* Para pantallas de tamaño tablet */
+@media (max-width: 768px) {
+     .chat-container {
+         width: calc(100% - 60px); /* Un poco más estrecho para tablets */
+         margin: 30px auto; /* Más margen para tablets */
+         /* Otros estilos específicos para tablets */
+     }
  }
  
+ /* Para pantallas de tamaño móvil */
+ @media (max-width: 600px) {
+     .chat-container {
+         width: calc(100% - 40px); /* Asume un margen total de 40px para los lados */
+         margin: 20px auto; /* Centra el contenedor en la pantalla con margen superior e inferior */
+         max-width: none; /* Anula el max-width para permitir que se extienda */
+         /* Otros estilos específicos para móviles */
+     }
+ }
  
+ /* También podrías agregar para pantallas más grandes si es necesario */
+ @media (min-width: 1200px) {
+     .chat-container {
+         width: calc(33.333% - 20px); /* Tamaño original para pantallas grandes */
+         margin: 20px auto; /* Margen estándar */
+         /* Otros estilos específicos para pantallas grandes */
+     }
+ }
  
- 
+
  
  .chat-header {
      display: flex;
@@ -1247,18 +1270,22 @@ ul.link_menu li a:hover {
      height: 400px;
      overflow-y: auto;
      padding: 10px;
-     background-color: #080f19;
+     background-color: #080f1900;
  }
  
  .chat-form {
      padding: 10px;
-     background-color: #ffffff;
-     border-bottom-left-radius: 15px;
-     border-bottom-right-radius: 15px;
+     background-color: #ffffff; /* Fondo blanco para el formulario */
+     border-radius: 20px; /* Bordes redondeados para el formulario */
      display: flex;
-     gap: 10px;
+     gap: 10px; /* Espacio entre los elementos del formulario */
+     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25); /* Sombra para el efecto de flotación */
+     /* Gradient menos brillante y más oscuro */
+     background-image: linear-gradient(to right, #005a9c, #003d6f, #002752);
+     border: none; /* No hay borde */
  }
  
+
  textarea {
      width: calc(100% - 90px);
      resize: none;
@@ -1311,20 +1338,29 @@ ul.link_menu li a:hover {
  }
  
  .btn-clear, .btn-send {
-     background-color: rgb(0 79 130);
+     background-image: linear-gradient(to right, #005a9c, #003d6f, #002752); /* Degradado azul */
      color: #fff;
      border: none;
-     padding: 10px 20px;
+     padding: 10px; /* Ajusta el padding para hacer el botón más circular si es necesario */
      font-size: 16px;
      font-weight: bold;
-     border-radius: 25px;
-     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+     border-radius: 50%; /* Hace el botón completamente redondo */
+     box-shadow: 0 0 15px 5px rgba(0, 123, 255, 0.6); /* Sombra azulada difuminada para el efecto de brillo */
      transition: background-color 0.3s ease;
+     width: 50px; /* Establece un ancho fijo */
+     height: 50px; /* Establece una altura fija para asegurar la forma circular */
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     cursor: pointer; /* Estilo del cursor al pasar sobre el botón */
  }
  
  .btn-clear:hover, .btn-send:hover {
-     background-color: rgba(255, 255, 255, 0.7); /* Mayor opacidad al pasar el mouse */
+     background-image: linear-gradient(to left, #0062cc, #003d7a, #001b2d); /* Cambia el degradado al pasar el mouse */
+     box-shadow: 0 0 20px 10px rgba(0, 123, 255, 0.7); /* Aumenta el brillo al pasar el mouse */
  }
+ 
+ 
  
  /* Ajustes específicos para el botón enviar, si es necesario */
  .btn-send {
