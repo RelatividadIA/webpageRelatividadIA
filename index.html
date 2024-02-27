@@ -341,6 +341,7 @@ const prompt3 = `
         N1_promptForm = document.getElementById("promptForm1");
         N1_trainingPromptDirectory = "Ejemplo.txt";
         N1_URL = "https://chatgpt-conversacion.o8791rg889c4o.us-east-1.cs.amazonlightsail.com/chatgpt";
+        N1_COLOR = "color-NEON-AMARILLO" 
 
         N2_chatID = document.getElementById("prompt2");
         N2_apiResponse = document.getElementById("apiResponse2");
@@ -348,6 +349,7 @@ const prompt3 = `
         N2_promptForm = document.getElementById("promptForm2");
         N2_trainingPromptDirectory = "Ejemplo.txt";
         N2_URL = "https://chatgpt-conversacion.o8791rg889c4o.us-east-1.cs.amazonlightsail.com/chatgpt";
+        N2_COLOR = "color-NEON-VERDE" 
 
         N3_chatID = document.getElementById("prompt3");
         N3_apiResponse = document.getElementById("apiResponse3");
@@ -355,10 +357,12 @@ const prompt3 = `
         N3_promptForm = document.getElementById("promptForm3");
         N3_trainingPromptDirectory = "Ejemplo.txt";
         N3_URL = "https://chatgpt-conversacion.o8791rg889c4o.us-east-1.cs.amazonlightsail.com/chatgpt";
+        N3_COLOR = "color-NEON-ROSA" 
 
-        CHAT1 = new Chat(N1_chatID, N1_apiResponse, N1_btnClear, N1_promptForm, prompt, N1_URL);
-        CHAT2 = new Chat(N2_chatID, N2_apiResponse, N2_btnClear, N2_promptForm, prompt2, N2_URL);
-        CHAT3 = new Chat(N3_chatID, N3_apiResponse, N3_btnClear, N3_promptForm, prompt3, N3_URL);
+
+        CHAT1 = new Chat(N1_chatID, N1_apiResponse, N1_btnClear, N1_promptForm, prompt, N1_URL, N1_COLOR);
+        CHAT2 = new Chat(N2_chatID, N2_apiResponse, N2_btnClear, N2_promptForm, prompt2, N2_URL, N2_COLOR);
+        CHAT3 = new Chat(N3_chatID, N3_apiResponse, N3_btnClear, N3_promptForm, prompt3, N3_URL, N3_COLOR);
         // Aplicar la clase writing si el mensaje es "escribiendo" o alguna variación de este
 
        </script>
